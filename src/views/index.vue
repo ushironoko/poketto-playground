@@ -2,7 +2,7 @@
 export default {
   name: 'Index',
   setup() {
-    const appName = 'poketto'
+    const appName = 'Hello poketto'
     return {
       appName
     }

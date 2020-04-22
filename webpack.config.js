@@ -1,8 +1,8 @@
-
-import { resolve } from 'path'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
-import { VueLoaderPlugin } from 'vue-loader'
-import { DefinePlugin } from 'webpack'
+/* eslint-disable @typescript-eslint/no-var-requires */
+const { resolve } = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { VueLoaderPlugin } = require('vue-loader')
+const webpack = require('webpack')
 
 const outputPath = resolve(__dirname, 'dist')
 
@@ -10,20 +10,17 @@ const outputPath = resolve(__dirname, 'dist')
 const config = (env = {}) => ({
   mode: env.prod ? 'production' : 'development',
   devtool: env.prod ? 'source-map' : 'inline-source-map',
-
   devServer: {
     contentBase: outputPath,
     historyApiFallback: true,
     hot: true,
     stats: 'minimal',
   },
-
   output: {
     path: outputPath,
     publicPath: '/',
     filename: 'bundle.js',
   },
-
   entry: [resolve(__dirname, 'src/main.ts')],
   module: {
     rules: [
@@ -40,6 +37,7 @@ const config = (env = {}) => ({
   resolve: {
     alias: {
       vue: '@vue/runtime-dom',
+      '~': resolve('src'),
     },
     extensions: ['.ts', 'd.ts', '.tsx', '.js', '.vue'],
   },
@@ -48,14 +46,7 @@ const config = (env = {}) => ({
     new HtmlWebpackPlugin({
       template: resolve(__dirname, 'src/index.html'),
     }),
-    new DefinePlugin({
-      __DEV__: JSON.stringify(!env.prod),
-      __BROWSER__: 'true',
-      'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-      },
-    }),
   ],
 })
 
-export default config
+module.exports = config
