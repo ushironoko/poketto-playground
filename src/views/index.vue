@@ -1,17 +1,21 @@
 <script>
+import { useAppConfig } from '~/views/useAppConfig'
 export default {
   name: 'Index',
   setup() {
-    const appName = 'Hello poketto'
     return {
-      appName
+      useAppConfig
     }
   },
 }
 </script>
 
 <template>
-  <div>{{ appName }}</div>
+  <div>
+    <p>{{ useAppConfig.name }}</p>
+    <p>{{ useAppConfig.version }}</p>
+    <p>{{ useAppConfig.mode }}</p>
+  </div>
 </template>
 
 

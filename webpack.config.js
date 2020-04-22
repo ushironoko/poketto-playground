@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { resolve } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 const webpack = require('webpack')
 
@@ -46,6 +47,7 @@ const config = (env = {}) => ({
     new HtmlWebpackPlugin({
       template: resolve(__dirname, 'src/index.html'),
     }),
+    new CleanWebpackPlugin(),
   ],
 })
 
