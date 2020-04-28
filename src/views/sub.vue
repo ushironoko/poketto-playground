@@ -3,7 +3,7 @@ import { useAppConfig } from '~/views/useAppConfig'
 import { useRouter } from 'vue-router'
 
 export default {
-  name: 'Index',
+  name: 'Sub',
   setup() {
     const router = useRouter()
     const toHome = () => router.push({ path: '/' })
