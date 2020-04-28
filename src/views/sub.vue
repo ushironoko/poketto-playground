@@ -12,11 +12,9 @@ export default {
 
 <template>
   <div>
-    <p>{{ useAppConfig.name }}</p>
-    <p>{{ useAppConfig.version }}</p>
-    <p>{{ useAppConfig.mode }}</p>
-    <router-link :to="{ name: 'sub' }">
-      sub
+    <p>Sub Page</p>
+    <router-link :to="{ path: '/' }">
+      home
     </router-link>
   </div>
 </template>
