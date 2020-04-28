@@ -1,10 +1,15 @@
 <script>
 import { useAppConfig } from '~/views/useAppConfig'
+import { useRouter } from 'vue-router'
+
 export default {
   name: 'Index',
   setup() {
+    const router = useRouter()
+    const toSub = () => router.push({ name: 'sub' })
     return {
-      useAppConfig
+      useAppConfig,
+      toSub
     }
   },
 }
@@ -16,7 +21,12 @@ export default {
     <p>{{ useAppConfig.version }}</p>
     <p>{{ useAppConfig.mode }}</p>
     <router-link :to="{ name: 'sub' }">
-      sub
+      to sub link
     </router-link>
+    <div>
+      <button @click="toSub">
+        to sub button
+      </button>
+    </div>
   </div>
 </template>
