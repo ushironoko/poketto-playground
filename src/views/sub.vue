@@ -1,5 +1,4 @@
 <script>
-import { useAppConfig } from '~/views/useAppConfig'
 import { useRouter } from 'vue-router'
 
 export default {
@@ -8,7 +7,6 @@ export default {
     const router = useRouter()
     const toHome = () => router.push({ path: '/' })
     return {
-      useAppConfig,
       toHome
     }
   },
