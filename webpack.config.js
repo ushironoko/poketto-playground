@@ -27,7 +27,16 @@ const config = (env = {}) => ({
     rules: [
       {
         test: /\.ts$/,
-        use: 'ts-loader',
+        exclude: /node_modules|vue\/src/,
+        use: [
+          {
+            loader: 'ts-loader',
+            options: {
+              appendTsSuffixTo: [/\.vue$/],
+              transpileOnly: true,
+            },
+          },
+        ],
       },
       {
         test: /\.vue$/,
