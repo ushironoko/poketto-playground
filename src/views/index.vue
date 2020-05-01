@@ -1,8 +1,9 @@
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 import { useAppConfig } from '~/views/useAppConfig'
 import { useRouter } from 'vue-router'
 
-export default {
+export default defineComponent({
   name: 'Index',
   setup() {
     const router = useRouter()
@@ -12,7 +13,7 @@ export default {
       toSub
     }
   },
-}
+})
 </script>
 
 <template>
