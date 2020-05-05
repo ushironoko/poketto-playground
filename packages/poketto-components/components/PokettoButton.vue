@@ -6,12 +6,12 @@ export default defineComponent({
   props: {
     text: {
       type: String,
-      default: ''
+      default: 'click'
     }
   },
 })
 </script>
 
 <template>
-  <button>{{ text || 'click' }}</button>
+  <button>{{ text }}</button>
 </template>
