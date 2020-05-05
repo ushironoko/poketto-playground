@@ -2,12 +2,12 @@
 import { defineComponent } from 'vue'
 import { useAppConfig } from './useAppConfig'
 import { useRouter } from 'vue-router'
-import App from '@poketto/components'
+import { PokettoButton } from '@poketto/components'
 
 export default defineComponent({
   name: 'Index',
   components: {
-    App
+    PokettoButton
   },
   setup() {
     const router = useRouter()
@@ -29,9 +29,10 @@ export default defineComponent({
       to sub link
     </router-link>
     <div>
-      <button @click="toSub">
-        to sub button
-      </button>
+      <PokettoButton
+        text="to sub"
+        @click="toSub"
+      />
     </div>
     <div>
       <App />
