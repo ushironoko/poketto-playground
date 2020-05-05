@@ -1,18 +1,31 @@
-<script>
-export default {
-  data: () => ({ count: 0 })
-}
+<script lang="ts">
+import PokettoButton from './components/PokettoButton.vue'
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  components: {
+    PokettoButton
+  },
+  setup() {
+    return {
+      count: 0
+    }
+  },
+})
 </script>
 
 <template>
-  <h1>Hello Vite + Vue 3!</h1>
-  <p>Edit ./App.vue to test hot module replacement (HMR).</p>
-  <p>
-    <span>Count is: {{ count }}</span>
-    <button @click="count++">
-      increment
-    </button>
-  </p>
+  <div>
+    <h1>Hello Vite + Vue 3!</h1>
+    <p>Edit ./App.vue to test hot module replacement (HMR).</p>
+    <p>
+      <span>Count is: {{ count }}</span>
+      <PokettoButton
+        text="increment"
+        @click="count++"
+      />
+    </p>
+  </div>
 </template>
 
 <style scoped>

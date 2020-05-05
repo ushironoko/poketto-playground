@@ -12,10 +12,10 @@ module.exports = {
   ],
   "parser": "vue-eslint-parser",
   "parserOptions": {
+    "parser": "@typescript-eslint/parser",
     "ecmaVersion": 2018,
     "warnOnUnsupportedTypeScriptVersion": false,
-    "project": './tsconfig.json',
-    "tsconfigRootDir": __dirname
+    "extraFileExtensions": [".vue"]
   },
   "plugins": [
     "prettier",

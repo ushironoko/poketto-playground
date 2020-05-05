@@ -2,7 +2,7 @@ Arguments:
   /Users/intern/.nodenv/versions/10.14.2/bin/node /usr/local/Cellar/yarn/1.21.1/libexec/bin/yarn.js
 
 PATH: 
-  /Users/intern/.nodenv/versions/10.14.2/bin:/usr/local/Cellar/nodenv/1.3.1/libexec:/Users/intern/Downloads/google-cloud-sdk/bin:/Users/intern/.nodenv/shims:/Users/intern/.cargo/bin:/usr/local/opt/gettext/bin:/usr/local/sbin:/usr/local/bin:/usr/local/opt/libxml2/bin:/usr/local/opt/libxml2/bin:/usr/local/opt/openssl/bin:/usr/local/opt/bison@2.7/bin:/Users/intern/.phpenv/shims:/Users/intern/.phpenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:GOBIN
+  /Users/intern/.nodenv/versions/10.14.2/bin:/usr/local/Cellar/nodenv/1.3.1/libexec:/Users/intern/Downloads/google-cloud-sdk/bin:/Users/intern/.nodenv/shims:/Users/intern/.cargo/bin:/usr/local/opt/gettext/bin:/usr/local/sbin:/usr/local/bin:/usr/local/opt/libxml2/bin:/usr/local/opt/libxml2/bin:/usr/local/opt/openssl/bin:/usr/local/opt/bison@2.7/bin:/Users/intern/.phpenv/shims:/Users/intern/.phpenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/intern/Downloads/google-cloud-sdk/bin:/Users/intern/.nodenv/shims:/Users/intern/.cargo/bin:/usr/local/opt/gettext/bin:/usr/local/sbin:/usr/local/opt/libxml2/bin:/usr/local/opt/openssl/bin:/usr/local/opt/bison@2.7/bin:/Users/intern/.phpenv/shims:/Users/intern/.phpenv/bin:/usr/local/go/bin:GOBIN:/usr/local/go/bin:GOBIN
 
 Yarn version: 
   1.21.1
@@ -31,46 +31,16 @@ npm manifest:
     "name": "poketto-playground",
     "version": "1.0.0",
     "main": "main.ts",
-    "license": "MIT",
-    "private": true,
-    "dependencies": {
-      "vue": "^3.0.0-beta.9",
-      "vue-router": "^4.0.0-alpha.7",
-      "poketto-components": "*",
-      "vite": "^0.10.0",
-      "@vue/compiler-sfc": "^3.0.0-beta.7"
-    },
     "scripts": {
-      "dev": "lerna run --scope poketto-playground dev",
+      "dev": "webpack-dev-server --mode=development",
       "build": "webpack --progress --mode=production",
-      "vite": "lerna run --scope @poketto/* dev --stream",
-      "vite-build": "lerna run --scope @poketto/* build --stream",
-      "lint": "lerna run lint --stream",
-      "fix": "lerna run fix --stream",
-      "rm": "lerna exec -- rm -rf node_modules && rm -rf node_modules"
+      "lint": "eslint --ext .ts,.vue .",
+      "fix": "eslint --fix --ext .ts,.vue ."
     },
-    "devDependencies": {
-      "@typescript-eslint/eslint-plugin": "^2.28.0",
-      "@typescript-eslint/parser": "^2.28.0",
-      "clean-webpack-plugin": "^3.0.0",
-      "eslint": "^6.8.0",
-      "eslint-config-prettier": "^6.10.1",
-      "eslint-plugin-prettier": "^3.1.3",
-      "eslint-plugin-vue": "^7.0.0-alpha.0",
-      "html-webpack-plugin": "^4.2.0",
-      "lerna": "^3.20.2",
-      "prettier": "^2.0.4",
-      "ts-loader": "^7.0.1",
-      "typescript": "^3.8.3",
-      "vue-loader": "^16.0.0-alpha.3",
-      "webpack": "^4.43.0",
-      "webpack-cli": "^3.3.11",
-      "webpack-dev-server": "^3.10.3"
-    },
-    "workspaces": [
-      "poketto/*",
-      "packages/*"
-    ]
+    "alias": {
+      "~": "./src/*",
+      "@": "./src/*"
+    }
   }
 
 yarn manifest: 

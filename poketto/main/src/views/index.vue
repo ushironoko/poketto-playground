@@ -1,8 +1,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useAppConfig } from '~/views/useAppConfig'
+import { useAppConfig } from './useAppConfig'
 import { useRouter } from 'vue-router'
-import App from 'poketto-components'
+import App from '@poketto/components'
 
 export default defineComponent({
   name: 'Index',
