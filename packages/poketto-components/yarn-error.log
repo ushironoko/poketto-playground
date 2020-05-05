@@ -1,0 +1,38 @@
+Arguments: 
+  /Users/intern/.nodenv/versions/10.14.2/bin/node /usr/local/Cellar/yarn/1.21.1/libexec/bin/yarn.js
+
+PATH: 
+  /Users/intern/.nodenv/versions/10.14.2/bin:/usr/local/Cellar/nodenv/1.3.1/libexec:/Users/intern/Downloads/google-cloud-sdk/bin:/Users/intern/.nodenv/shims:/Users/intern/.cargo/bin:/usr/local/opt/gettext/bin:/usr/local/sbin:/usr/local/bin:/usr/local/opt/libxml2/bin:/usr/local/opt/libxml2/bin:/usr/local/opt/openssl/bin:/usr/local/opt/bison@2.7/bin:/Users/intern/.phpenv/shims:/Users/intern/.phpenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:GOBIN
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  10.14.2
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/intern/work/scouter_dev/dev/poketto-playground/package.json: Unexpected token } in JSON at position 1085
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.21.1/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.21.1/libexec/lib/cli.js:310:30)
+      at /usr/local/Cellar/yarn/1.21.1/libexec/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "poketto-components",
+    "version": "0.0.0",
+    "scripts": {
+      "dev": "vite",
+      "build": "vite build"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
